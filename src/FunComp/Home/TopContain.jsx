@@ -1,6 +1,8 @@
 import { FaTruckFast } from "react-icons/fa6";
 
 const TopContain = () => {
+  // const [text, setText] = useState();
+  
   return (
     <div className="flex xsm:gap-3 md:gap-0 md:justify-between items-center justify-center flex-wrap flex-row mt-10 max-xsm:mt-5">
       <div className="w-[350px] h-[450px] xsm:w-[90%] xsm:h-[350px] md:w-[30%] md:p-4 md:h-[300px] lg:min-w-[27%] lg:h-[350px]  bg-[#121214] border-none rounded-xl flex items-center shadow-[0_0_2px_#ababab] lg:px-6 lg:py-10">
@@ -11,7 +13,7 @@ const TopContain = () => {
         />
       </div>
       <div className="border flex flex-wrap overflow-hidden justify-between flex-col w-[65%] lg:min-h-[350px] lg:max-w-[70%] xsm:w-[90%] xsm:h-auto xsm:gap-3 lg:justify-between md:w-[68%] p-8 bg-[#121214] shadow-[0_0_2px_#ababab] border-none rounded-xl">
-        <h1 className="font-bold xsm:text-sm md:text-xl lg:text-[32px]">
+        <h1 className="animation-typing animate-typing overflow-hidden whitespace-nowrap pr-5 text-5xl text-white font-bold xsm:text-sm md:text-xl lg:text-[32px]">
           I'm Mayank Sahu, a front-end developer.
         </h1>
         <div className="flex flex-col gap-2 lg:leading-5 xsm:text-[8px] xsm:leading-4 md:text-[10px] lg:text-[12px] tracking-widest text-gray-500">
