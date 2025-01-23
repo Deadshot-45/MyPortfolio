@@ -1,4 +1,5 @@
 import ExCard from "./ExCard";
+import React from "react";
 import PropTypes from "prop-types";
 
 const ExpEdu = ({ head, data }) => {
@@ -7,10 +8,10 @@ const ExpEdu = ({ head, data }) => {
       <h1 className="text-2xl xsm:text-2xl font-bold">{head}</h1>
       <div className="flex flex-col justify-between max-h-[550px]">
       {data.map((detail) => (
-        <>
-          <ExCard key={detail.id} detail={detail} />
+        <React.Fragment key={detail.id}>
+          <ExCard  detail={detail} />
           <hr />
-        </>
+        </React.Fragment>
       ))}
       </div>
     </div>

@@ -8,7 +8,7 @@ const About = () => {
           <h1 className="text-2xl xsm:text-[22px] font-bold text-orange-600">Educations</h1>
           <hr className=" w-full" />
         </div>
-        <div className="flex flex-wrap justify-center items-center gap-6">
+        <div className="flex flex-wrap justify-between items-center">
           {Education.map((degree)=>(
             <div key={degree.id} className="bg-[#121214] md:w-[80%] lg:w-[32%] lg:min-h-80 rounded-3xl p-6 hover:scale-105 transition-all delay-75 duration-150">
             <div className="flex flex-col gap-6 xsm:gap-4 p-4">

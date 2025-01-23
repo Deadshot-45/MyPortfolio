@@ -3,7 +3,7 @@ import { FaTruckFast } from "react-icons/fa6";
 const TopContain = () => {
   return (
     <div className="flex xsm:gap-3 md:gap-0 md:justify-between items-center justify-center flex-wrap flex-row mt-10">
-      <div className="w-[350px] h-[450px] xsm:w-[90%] xsm:h-[350px] md:w-[30%] md:p-4 md:h-[300px] lg:min-w-[25%] lg:h-[350px]  bg-[#121214] border-none rounded-xl flex items-center shadow-[0_0_2px_#ababab] lg:px-6 lg:py-10">
+      <div className="w-[350px] h-[450px] xsm:w-[90%] xsm:h-[350px] md:w-[30%] md:p-4 md:h-[300px] lg:min-w-[27%] lg:h-[350px]  bg-[#121214] border-none rounded-xl flex items-center shadow-[0_0_2px_#ababab] lg:px-6 lg:py-10">
         <img
           src="https://avatars.githubusercontent.com/u/168402822?v=4"
           alt="my-img"
