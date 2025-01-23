@@ -8,7 +8,7 @@ import Footer from "./FunComp/Home/Footer";
 
 const App = () => {
   return (
-    <div className="flex items-center flex-col min-h-96 text-white w-[85%] xsm:w-[95%] lg:w-[85%]">
+    <div className="flex items-center max-xsm:gap-4 flex-col min-h-96 text-white w-[85%] xsm:w-[95%] lg:w-[85%]">
       <Router>
         <NavBar />
         <Routes>

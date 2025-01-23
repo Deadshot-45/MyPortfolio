@@ -17,10 +17,6 @@ body{
     font-size: 16px;
     font-family: Poppins, sans-serif;
     overflow-x: hidden;
-    /* background-image: url('https://images.pexels.com/photos/743986/pexels-photo-743986.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover; */
     min-height: 100dvh;
 }
 
@@ -28,12 +24,59 @@ body{
     opacity: 0;
     transition: opacity 0.5s;
     height: 0;
-    /* transform: scale(0.5); */
     transition: all 0.5s ease-in-out;
   }
   
   .exp-edu.animate {
     height: auto;
     opacity: 1;
-    /* transform: scale(1); */
   }
+
+
+.typing-text {
+  @apply whitespace-nowrap;
+  max-width: 0;
+  animation: typing;
+}
+
+.typing-text span {
+  @apply inline-block;
+}
+
+@keyframes typing {
+  0% {
+    max-width: 0;
+  }
+  100% {
+    max-width: 100%;
+  }
+}
+
+@keyframes blink {
+  0% {
+    border-color: #000;
+  }
+  50% {
+    border-color: transparent;
+  }
+  100% {
+    border-color: #000;
+  }
+}
+
+@keyframes reveal {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.animate-reveal {
+  animation: reveal 0.5s forwards;
+}
+
+.animate-blink {
+  animation: blink 1s infinite;
+}

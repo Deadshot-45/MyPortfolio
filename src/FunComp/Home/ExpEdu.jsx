@@ -4,9 +4,9 @@ import PropTypes from "prop-types";
 
 const ExpEdu = ({ head, data, animate }) => {
   return (
-    <div className={`w-full px-12 h-full exp-edu ${animate ? 'animate' : ''}`}>
+    <div className={`w-full max-xsm:px-5 px-12 h-full exp-edu ${animate ? 'animate' : ''}`}>
       <h1 className="text-2xl xsm:text-2xl font-bold">{head}</h1>
-      <div className="flex flex-col justify-between max-h-[550px]">
+      <div className="flex flex-col justify-between max-xsm:py-4 max-xsm:gap-1 max-h-[550px]">
       {data.map((detail) => (
         <React.Fragment key={detail.id}>
           <ExCard  detail={detail} />

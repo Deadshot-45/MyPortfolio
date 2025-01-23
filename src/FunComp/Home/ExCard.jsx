@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 
 const ExCard = ({detail}) => {
   return (
-    <div className="flex items-center gap-4 p-6">
+    <div className="flex items-center gap-4 max-xsm:p-2 p-6">
       <div>
         <div className="text-[#eb5d3a] w-[50px] h-[50px] flex items-center justify-center bg-white rounded-xl">
           <svg
@@ -18,9 +18,9 @@ const ExCard = ({detail}) => {
         </div>
       </div>
       <div>
-        <h1 className="text-[#7d7d80] xsm:text-[12px]">{detail.year}</h1>
-        <p>{detail.name}</p>
-        <p className="text-[#5f5f65] text-sm">{detail.description}</p>
+        <h1 className="text-[#7d7d80] xsm:text-[12px] max-xsm:text-[10px]">{detail.year}</h1>
+        <p className='max-xsm:text-[12px] leading-5'>{detail.name}</p>
+        <p className="text-[#5f5f65] text-sm max-xsm:text-[10px]">{detail.description}</p>
       </div>
     </div>
   );
