@@ -9,8 +9,9 @@ const Projects = () => {
         <hr className=" w-full" />
       </div>
 
+      <div>
       {ProjectDetails.map(project =>(
-        <div key={project.id} className="bg-[#121214] w-[90%] rounded-3xl p-6">
+        <div key={project.id} className="bg-[#121214] w-[90%] rounded-3xl m-auto p-6">
         <div className="flex flex-col gap-2 p-4">
           <h2 className="text-2xl xsm:text-[20px] font-bold">{project.name}</h2>
           <p className="text-gray-400 xsm:text-[12px] xsm:leading-5">
@@ -25,6 +26,7 @@ const Projects = () => {
         </div>
       </div>
       ))}
+      </div>
     </div>
     </>
   );
