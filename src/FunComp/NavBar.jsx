@@ -5,7 +5,7 @@ const NavBar = () => {
   return (
     <nav className="w-[110%] top-0 flex justify-between items-center py-8">
       <div className="">
-        <h1 className="text-2xl xsm:text-sm md:text-xl lg:text-2xl max-xsm:text-[9px] cursor-pointer font-bold">Mayank Sahu</h1>
+        <h1 className="text-2xl xsm:text-sm md:text-xl lg:text-2xl max-xsm:text-[11px] cursor-pointer font-bold">Mayank Sahu</h1>
       </div>
       <ul className="flex lg:gap-10 text-[17px] xsm:text-[10px] max-xsm:text-[10px] max-xsm:gap-3 xsm:gap-3 md:text-sm lg:text-[16px] text-slate-200 font-semibold">
         <li>
