@@ -1,5 +1,5 @@
-// TypingText.js
-import React, { useState, useEffect } from "react";
+import PropTypes from "prop-types";
+import { useState, useEffect } from "react";
 
 const TypingText = ({ text, speed = 50 }) => {
   const [characters, setCharacters] = useState([]);
@@ -36,3 +36,8 @@ const TypingText = ({ text, speed = 50 }) => {
 };
 
 export default TypingText;
+
+TypingText.prototype = {
+  text: PropTypes.string.isRequired,
+  speed: PropTypes.number.isRequired,
+};

@@ -3,10 +3,10 @@ import { ProjectDetails } from "./ProjectsDetails";
 
 const Projects = () => {
   const [animate, setAnimate] = useState(false);
-  
-    useEffect(() => {
-      setAnimate(true);
-    }, []);
+
+  useEffect(() => {
+    setAnimate(true);
+  }, []);
   return (
     <>
       <div className="mb-10  flex flex-col items-center justify-center gap-10 w-full">
@@ -21,7 +21,9 @@ const Projects = () => {
           {ProjectDetails.map((project) => (
             <div
               key={project.id}
-              className={`bg-[#121214] project ${animate ? 'animate' : ''} w-[90%] rounded-3xl m-auto p-6`}
+              className={`bg-[#121214] project ${
+                animate ? "animate" : ""
+              } w-[90%] rounded-3xl m-auto p-6`}
             >
               <div className="flex flex-col gap-2 max-xsm:p-2 p-4">
                 <h2 className="text-2xl xsm:text-[20px] font-bold max-xsm:text-[18px]">

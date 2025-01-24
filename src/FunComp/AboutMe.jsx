@@ -6,7 +6,7 @@ const AboutMe = () => {
         <div className="w-[80%] max-xsm:w-[90%] flex flex-col gap-6 items-center justify-center">
           <h1 className="text-3xl font-semibold max-xsm:text-2xl text-white">About Me</h1>
           <p className="text-center max-xsm:text-[12px] max-xsm:leading-6">
-            Reach out and let's make it happen ✨. I'm also available for
+          Reach out and let's make it happen ✨. I'm also available for
             full-time or Part-time opportunities to push the boundaries of
             design and deliver exceptional work.
           </p>

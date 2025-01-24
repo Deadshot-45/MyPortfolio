@@ -8,17 +8,17 @@ const NavBar = () => {
         <h1 className="text-2xl xsm:text-sm md:text-xl lg:text-2xl max-xsm:text-[11px] cursor-pointer font-bold">Mayank Sahu</h1>
       </div>
       <ul className="flex lg:gap-10 text-[17px] xsm:text-[10px] max-xsm:text-[10px] max-xsm:gap-3 xsm:gap-3 md:text-sm lg:text-[16px] text-slate-200 font-semibold">
-        <li>
-          <Link to="/" className="hover:text-orange-500 transition-all delay-100 ease-in-out focus:text-orange-500">Home</Link>
+        <li className="hover:text-orange-500 transition-all delay-100 ease-in-out focus:text-orange-500">
+          <Link to="/">Home</Link>
         </li>
-        <li>
-          <Link to="/about" className="hover:text-orange-500 transition-all delay-100 ease-in-out focus:text-orange-500">About me</Link>
+        <li className="hover:text-orange-500 transition-all delay-100 ease-in-out focus:text-orange-500">
+          <Link to="/about">About me</Link>
         </li>
-        <li>
-          <Link to="/projects" className="hover:text-orange-500 transition-all delay-100 ease-in-out focus:text-orange-500">Projects</Link>
+        <li className="hover:text-orange-500 transition-all delay-100 ease-in-out focus:text-orange-500">
+          <Link to="/projects" >Projects</Link>
         </li>
-        <li>
-          <Link to="/contact" className="hover:text-orange-500 transition-all delay-100 ease-in-out focus:text-orange-500">Contact</Link>
+        <li className="hover:text-orange-500 transition-all delay-100 ease-in-out focus:text-orange-500">
+          <Link to="/contact">Contact</Link>
         </li>
       </ul>
       <a href="mailto:mayanksahu8179@gmail.com"

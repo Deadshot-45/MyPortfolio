@@ -22,6 +22,7 @@ export default ExpEdu;
 
 ExpEdu.propTypes = {
   head: PropTypes.string.isRequired,
+  animate: PropTypes.bool.isRequired,
   data: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,

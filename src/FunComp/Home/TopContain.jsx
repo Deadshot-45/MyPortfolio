@@ -16,7 +16,7 @@ const TopContain = () => {
         <TypingText text={"I'm Mayank Sahu, a front-end developer."}/>
         <div className="max-xsm:w-full max-xsm:text-[9px] max-xsm:leading-4 flex flex-col gap-2 lg:leading-5 xsm:text-[8px] xsm:leading-4 md:text-[10px] lg:text-[12px] tracking-widest text-gray-500">
           <p>
-            "Passionate and detail-oriented Front-End Developer with a solid
+            Passionate and detail-oriented Front-End Developer with a solid
             foundation in Economics and Mathematics (B.A. from Zakir Husain
             Delhi College) and advanced technical skills (M.C.A. from Oriental
             University, Indore). Proficient in HTML, CSS, JavaScript, and React
@@ -31,7 +31,7 @@ const TopContain = () => {
             innovative web projects to life. My strong technical expertise,
             combined with a keen eye for detail, drives me to develop
             high-quality, responsive web applications that exceed user
-            expectations and foster engaging interactions."
+            expectations and foster engaging interactions.
           </p>
         </div>
 
