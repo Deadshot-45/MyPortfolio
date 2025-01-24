@@ -37,7 +37,7 @@ const TypingText = ({ text, speed = 50 }) => {
 
 export default TypingText;
 
-TypingText.prototype = {
+TypingText.propTypes = {
   text: PropTypes.string.isRequired,
   speed: PropTypes.number.isRequired,
 };

@@ -12,7 +12,7 @@ const NavBar = () => {
           <Link to="/">Home</Link>
         </li>
         <li className="hover:text-orange-500 transition-all delay-100 ease-in-out focus:text-orange-500">
-          <Link to="/about">About me</Link>
+          <Link to="/aboutme">About me</Link>
         </li>
         <li className="hover:text-orange-500 transition-all delay-100 ease-in-out focus:text-orange-500">
           <Link to="/projects" >Projects</Link>
