@@ -1,5 +1,6 @@
 import ExCard from "./ExCard";
 import PropTypes from "prop-types";
+import React from "react";
 
 const ExpEdu = ({ head, data, animate }) => {
   return (
