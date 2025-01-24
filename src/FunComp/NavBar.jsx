@@ -9,7 +9,7 @@ const NavBar = () => {
     { label: "Contact", path: "/contact" },
   ];
   return (
-    <nav className="w-[110%] top-0 flex justify-between items-center py-8">
+    <nav className="max-xsm:w-[110%] w-full top-0 flex justify-between items-center py-8">
       <div className="">
         <h1 className="text-2xl xsm:text-sm md:text-xl lg:text-2xl max-xsm:text-[11px] cursor-pointer font-bold">
           Mayank Sahu
