@@ -2,7 +2,6 @@ import { FaTruckFast } from "react-icons/fa6";
 import TypingText from "./TypingText";
 
 const TopContain = () => {
-  // const [text, setText] = useState();
   
   return (
     <div className="flex xsm:gap-3 max-xsm:mt-0 max-xsm:gap-3 md:gap-0 md:justify-between items-center justify-center flex-wrap flex-row mt-10">

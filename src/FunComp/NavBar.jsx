@@ -7,7 +7,7 @@ const NavBar = () => {
       <div>
         <h1 className="text-2xl xsm:text-sm md:text-xl lg:text-2xl max-xsm:text-[9px] cursor-pointer font-bold">Mayank Sahu</h1>
       </div>
-      <ul className="flex lg:gap-10 text-[17px] xsm:text-[10px] max-xsm:text-[7px] max-xsm:gap-3 xsm:gap-3 md:text-sm lg:text-[16px] text-slate-200 font-semibold">
+      <ul className="flex lg:gap-10 text-[17px] xsm:text-[10px] max-xsm:text-[10px] max-xsm:gap-3 xsm:gap-3 md:text-sm lg:text-[16px] text-slate-200 font-semibold">
         <li>
           <Link to="/" className="hover:text-orange-500 transition-all delay-100 ease-in-out focus:text-orange-500">Home</Link>
         </li>

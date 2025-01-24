@@ -1,5 +1,5 @@
 // TypingText.js
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from "react";
 
 const TypingText = ({ text, speed = 50 }) => {
   const [characters, setCharacters] = useState([]);
@@ -8,7 +8,10 @@ const TypingText = ({ text, speed = 50 }) => {
   useEffect(() => {
     const intervalId = setInterval(() => {
       if (currentIndex < text.length) {
-        setCharacters((prevCharacters) => [...prevCharacters, text[currentIndex]]);
+        setCharacters((prevCharacters) => [
+          ...prevCharacters,
+          text[currentIndex],
+        ]);
         setCurrentIndex((prevIndex) => prevIndex + 1);
       } else {
         clearInterval(intervalId);
@@ -28,7 +31,6 @@ const TypingText = ({ text, speed = 50 }) => {
           {character}
         </span>
       ))}
-      <span className="absolute right-0 top-0 bottom-0 border-r-2 border-black animate-blink"></span>
     </div>
   );
 };

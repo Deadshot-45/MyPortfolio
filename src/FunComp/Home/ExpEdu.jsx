@@ -1,5 +1,4 @@
 import ExCard from "./ExCard";
-import React from "react";
 import PropTypes from "prop-types";
 
 const ExpEdu = ({ head, data, animate }) => {
