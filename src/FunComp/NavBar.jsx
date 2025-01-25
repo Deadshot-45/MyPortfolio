@@ -11,9 +11,9 @@ const NavBar = () => {
   return (
     <nav className="max-xsm:w-[110%] w-full top-0 flex justify-between items-center py-8">
       <div className="">
-        <h1 className="text-2xl xsm:text-sm md:text-xl lg:text-2xl max-xsm:text-[11px] cursor-pointer font-bold">
+        <a href="/" rel="noopener noreferrer" aria-label="Home-page" className="text-2xl xsm:text-sm md:text-xl lg:text-2xl max-xsm:text-[11px] cursor-pointer font-bold">
           Mayank Sahu
-        </h1>
+        </a>
       </div>
       <ul className="flex lg:gap-10 text-[17px] xsm:text-[10px] max-xsm:text-[10px] max-xsm:gap-3 xsm:gap-3 md:text-sm lg:text-[16px] text-slate-200 font-semibold">
         {navItems.map((items, index) => (
