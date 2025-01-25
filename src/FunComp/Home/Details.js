@@ -3,13 +3,13 @@ export let Education = [
     id: 2024,
     name: "Master in Computer Application",
     year: "Sep'22 - Jun'24",
-    description: "Delhi University in Delhi",
+    description: "Oriental University in Indore" ,
   },
   {
     id: 2022,
     name: "Bachelor in Econmics and Mathematics",
     year: "Sep'19 - Jun'22",
-    description: "Oriental University in Indore",
+    description: "University of Delhi in Delhi",
   },
   {
     id: 2019,
