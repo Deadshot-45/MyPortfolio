@@ -1,0 +1,100 @@
+@import "tailwindcss";
+
+:root {
+  color-scheme: dark;
+  --background: #050811;
+  --foreground: #f5f7fb;
+  --muted-foreground: rgba(228, 233, 245, 0.72);
+  --surface: rgba(11, 16, 29, 0.7);
+  --surface-strong: rgba(17, 23, 39, 0.92);
+  --border-strong: rgba(158, 171, 197, 0.18);
+  --accent: #537eff;
+  --accent-strong: #7ea0ff;
+  --accent-secondary: #63d1b6;
+  --grid-line: rgba(142, 156, 186, 0.08);
+  --shadow-soft: 0 18px 45px rgba(5, 8, 17, 0.18);
+  --shadow-strong: 0 28px 80px rgba(5, 8, 17, 0.28);
+}
+
+:root[data-theme="light"] {
+  color-scheme: light;
+  --background: #f5f7fb;
+  --foreground: #0a1327;
+  --muted-foreground: rgba(10, 19, 39, 0.66);
+  --surface: rgba(255, 255, 255, 0.78);
+  --surface-strong: rgba(255, 255, 255, 0.95);
+  --border-strong: rgba(10, 19, 39, 0.12);
+  --accent: #2d5bff;
+  --accent-strong: #214fe4;
+  --accent-secondary: #23b596;
+  --grid-line: rgba(45, 91, 255, 0.06);
+  --shadow-soft: 0 20px 40px rgba(45, 59, 90, 0.08);
+  --shadow-strong: 0 32px 80px rgba(45, 59, 90, 0.12);
+}
+
+@theme {
+  --font-sans: "Avenir Next", "Segoe UI", "Helvetica Neue", sans-serif;
+  --font-display: "Avenir Next Condensed", "Trebuchet MS", "Segoe UI", sans-serif;
+}
+
+* {
+  border-color: var(--border-strong);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at top left, rgba(83, 126, 255, 0.12), transparent 28%),
+    radial-gradient(circle at bottom right, rgba(99, 209, 182, 0.1), transparent 22%),
+    var(--background);
+  color: var(--foreground);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-display);
+  letter-spacing: -0.04em;
+}
+
+a,
+button,
+input,
+textarea {
+  transition:
+    color 180ms ease,
+    background-color 180ms ease,
+    border-color 180ms ease,
+    transform 180ms ease,
+    opacity 180ms ease;
+}
+
+img {
+  user-select: none;
+}
+
+::selection {
+  background: rgba(83, 126, 255, 0.24);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

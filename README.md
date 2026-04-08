@@ -1,54 +1,77 @@
-**My Portfolio**
-================
+# Mayank Sahu — Premium Developer Portfolio
 
-A personal portfolio website built with React, Tailwind CSS, and Vite.
+A high-performance, aesthetically driven personal portfolio website built with **Next.js 16**, **React 19**, **TypeScript**, **Framer Motion**, and **Tailwind CSS 4**. This project serves as a comprehensive professional showcase for **Mayank Sahu**, a Front-End Web Developer and MCA 2024 graduate.
 
-**Features**
-------------
+![Portfolio Preview](/hero-image.png)
 
-*   Responsive design with a modern and clean UI
-*   Navigation bar with links to different sections of the portfolio
-*   Home section with a brief introduction and a call-to-action button
-*   Education section with a list of academic achievements
-*   Projects section with a list of personal projects
-*   Contact section with a contact form and social media links
-*   About section with a brief bio and skills
+## 🚀 Key Features
 
-**Technologies Used**
---------------------
+*   **Premium Aesthetics**: A custom dark-themed design system centered around a sleek Slate and Emerald palette with glassmorphism effects.
+*   **Dynamic Professional Timeline**: An interactive career journey component that showcases internships and full-time roles with a responsive axis-based design.
+*   **Academic Foundation**: Stylized educational milestones featuring high-impact iconography and descriptive cards for MCA and B.A. degrees.
+*   **Technical Arsenal**: A detailed skills showcase categorized into "Core Expertise" and "Tools & Backend," featuring interactive hover states and spring-based animations.
+*   **Viewport-Triggered Animations**: Powered by **Framer Motion**, content seamlessly slides and fades into view as the user scrolls, creating a state-of-the-art interactive experience.
+*   **Modern Mobile Navigation**: A custom-built, touch-optimized mobile drawer with smooth state-of-the-art overlay transitions for tablets (like iPad Mini) and smartphones.
+*   **Performance Optimized**: 100% Client-Side Rendering optimization for high-density animations and zero-config Vercel deployment readiness.
 
-*   React: A JavaScript library for building user interfaces
-*   Tailwind CSS: A utility-first CSS framework for styling
-*   Vite: A build tool for modern web development
-*   React Router: A library for client-side routing
-*   React Icons: A library for icons
+## 🛠️ Built With
 
-**Getting Started**
--------------------
+*   **Frontend Framework**: [Next.js 16](https://nextjs.org/) (App Router)
+*   **UI Library**: [React 19](https://react.dev/)
+*   **Styling**: [Tailwind CSS 4.x](https://tailwindcss.com/)
+*   **Animations**: [Framer Motion](https://www.framer.com/motion/)
+*   **Icons**: [Lucide React](https://lucide.dev/)
+*   **Language**: [TypeScript](https://www.typescriptlang.org/)
 
-1.  Clone the repository using `git clone https://github.com/Deadshot-45/my-portfolio.git`
-2.  Install the dependencies using `npm install` or `yarn install`
-3.  Start the development server using `npm run dev` or `yarn dev`
-4.  Open the website in your browser at `http://localhost:3000`
+## 📦 Getting Started
 
-**Building and Deployment**
--------------------------
+### Prerequisites
 
-1.  Build the website using `npm run build` or `yarn build`
-2.  Deploy the website to your preferred hosting platform
+*   Node.js 18.x or later
+*   npm or pnpm
 
-**License**
-----------
+### Installation
 
-This project is licensed under the MIT License. See the LICENSE file for details.
+1.  **Clone the repository**:
+    ```bash
+    git clone https://github.com/Deadshot-45/portfolio.git
+    cd portfolio
+    ```
 
-**Acknowledgments**
-------------------
+2.  **Install dependencies**:
+    ```bash
+    npm install
+    # or
+    pnpm install
+    ```
 
-*   Thanks to the creators of React, Tailwind CSS, and Vite for their amazing work.
-*   Thanks to the open-source community for their contributions and support.
+3.  **Run the development server**:
+    ```bash
+    npm run dev
+    ```
 
-**Contact**
-------------
+4.  **Build for production**:
+    ```bash
+    npm run build
+    ```
 
-If you have any questions or need help with the project, feel free to contact me at [mayanksahu8179@gmail.com](mailto:mayanksahu8179@gmail.com).
+## 📐 Project Structure
+
+```text
+src/
+├── app/            # Next.js App Router (Layout & Home)
+├── components/     # Modular UI Components (Hero, Navbar, SectionHeading, etc.)
+├── types/          # Shared TypeScript Interfaces
+└── public/         # High-resolution static assets (Project Thumbnails, Next.js assets)
+```
+
+## 📬 Contact & Connect
+
+*   **Name**: Mayank Sahu
+*   **Degree**: Master of Computer Applications (Oriental University, 2024)
+*   **LinkedIn**: [LinkedIn Profile](https://www.linkedin.com/in/mayank-sahu-ou)
+*   **GitHub**: [Deadshot-45](https://github.com/Deadshot-45/)
+*   **Email**: [mayanksahu8179@gmail.com](mailto:mayanksahu8179@gmail.com)
+
+---
+© 2026 Mayank Sahu — Built with Precision and Passion.
