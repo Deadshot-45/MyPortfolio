@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
 const apiUrl = process.env.NEXT_PUBLIC_API_URL || process.env.NEXT_API_URL;
+let allowLocalIp = false;
 const remotePatterns = [
   {
     protocol: "http",
@@ -12,6 +13,11 @@ const remotePatterns = [
     protocol: "http",
     hostname: "127.0.0.1",
     port: "5000",
+    pathname: "/**",
+  },
+  {
+    protocol: "https",
+    hostname: "vault-vogue-server.vercel.app",
     pathname: "/**",
   },
 ];
@@ -26,6 +32,11 @@ if (apiUrl) {
       port,
       pathname: "/**",
     });
+
+    allowLocalIp =
+      hostname === "localhost" ||
+      hostname === "127.0.0.1" ||
+      hostname === "::1";
   } catch {
     console.warn("Invalid NEXT_PUBLIC_API_URL for next/image remotePatterns");
   }
@@ -37,6 +48,7 @@ const nextDevtoolsShim = "./src/shims/next-devtools.ts";
 const nextConfig = {
   images: {
     remotePatterns,
+    dangerouslyAllowLocalIP: allowLocalIp,
   },
   webpack(config: any) {
     config.resolve ??= {};
