@@ -5,7 +5,7 @@ import { cn } from "@/lib/utils";
 import { AnimatePresence, motion } from "framer-motion";
 import { Github, Linkedin, Menu, X } from "lucide-react";
 import Link from "next/link";
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useState } from "react";
 import { ThemeToggle } from "./theme-toggle";
 
 export function PortfolioNavbar() {
@@ -13,40 +13,79 @@ export function PortfolioNavbar() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
-  const sectionIds = useMemo(
-    () => navigationItems.map((item) => item.href.replace("#", "")),
-    []
-  );
-
   useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 12);
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        const visible = entries
-          .filter((entry) => entry.isIntersecting)
-          .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
-
-        if (visible?.target.id) {
-          setActiveSection(visible.target.id);
-        }
-      },
-      { rootMargin: "-40% 0px -45% 0px", threshold: [0.15, 0.35, 0.6] }
+    const sectionIds = navigationItems.map((item) =>
+      item.href.replace("#", ""),
     );
+    const sections = sectionIds
+      .map((id) => document.getElementById(id))
+      .filter((section): section is HTMLElement => section !== null);
 
-    sectionIds.forEach((id) => {
-      const element = document.getElementById(id);
-      if (element) observer.observe(element);
-    });
+    const updateActiveSection = () => {
+      setScrolled(window.scrollY > 12);
 
-    handleScroll();
-    window.addEventListener("scroll", handleScroll, { passive: true });
+      if (window.scrollY < 80) {
+        setActiveSection("home");
+        return;
+      }
+
+      const viewportAnchor = window.innerHeight * 0.35;
+      const active = sections.reduce<{
+        id: string;
+        distance: number;
+        inView: boolean;
+      } | null>((closest, section) => {
+        const rect = section.getBoundingClientRect();
+        const isInView =
+          rect.top <= viewportAnchor && rect.bottom >= viewportAnchor;
+        const distance = Math.abs(rect.top - viewportAnchor);
+        const next = { id: section.id, distance, inView: isInView };
+
+        if (!closest) {
+          return next;
+        }
+
+        if (next.inView && !closest.inView) {
+          return next;
+        }
+
+        if (
+          next.inView === closest.inView &&
+          next.distance < closest.distance
+        ) {
+          return next;
+        }
+
+        return closest;
+      }, null);
+
+      if (active?.id) {
+        setActiveSection(active.id);
+      }
+    };
+
+    const syncWithHash = () => {
+      const hash = window.location.hash.replace("#", "");
+      if (hash && sectionIds.includes(hash)) {
+        setActiveSection(hash);
+        return;
+      }
+
+      updateActiveSection();
+    };
+
+    updateActiveSection();
+    syncWithHash();
+    window.addEventListener("scroll", updateActiveSection, { passive: true });
+    window.addEventListener("hashchange", syncWithHash);
+    window.addEventListener("resize", updateActiveSection);
 
     return () => {
-      observer.disconnect();
-      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("scroll", updateActiveSection);
+      window.removeEventListener("hashchange", syncWithHash);
+      window.removeEventListener("resize", updateActiveSection);
     };
-  }, [sectionIds]);
+  }, []);
 
   return (
     <>
@@ -62,14 +101,19 @@ export function PortfolioNavbar() {
             "mx-auto flex max-w-7xl items-center justify-between rounded-full border px-4 py-3 transition-all sm:px-5",
             scrolled
               ? "border-[var(--border-strong)]/90 bg-[var(--surface)]/80 shadow-[var(--shadow-strong)] backdrop-blur-xl"
-              : "border-transparent bg-transparent"
+              : "border-transparent bg-transparent",
           )}
         >
-          <Link href="/" className="flex items-center gap-3 text-sm font-semibold tracking-[0.24em]">
+          <Link
+            href="/"
+            className="flex items-center gap-3 text-sm font-semibold tracking-[0.24em]"
+          >
             <span className="flex h-10 w-10 items-center justify-center rounded-full bg-[var(--surface-strong)] text-[var(--foreground)] shadow-[var(--shadow-soft)]">
               {siteConfig.shortName}
             </span>
-            <span className="hidden text-[var(--foreground)] sm:block">{siteConfig.name}</span>
+            <span className="hidden text-[var(--foreground)] sm:block">
+              {siteConfig.name}
+            </span>
           </Link>
 
           <div className="hidden items-center gap-1 rounded-full border border-[var(--border-strong)]/70 bg-[var(--surface)]/65 p-1 lg:flex">
@@ -81,11 +125,12 @@ export function PortfolioNavbar() {
                 <a
                   key={item.href}
                   href={item.href}
+                  onClick={() => setActiveSection(itemId)}
                   className={cn(
                     "rounded-full px-4 py-2 text-sm transition-colors",
                     active
-                      ? "bg-[var(--foreground)] text-[var(--background)]"
-                      : "text-[var(--muted-foreground)] hover:text-[var(--foreground)]"
+                      ? "border border-[var(--foreground)] text-[var(--background)] bg-[var(--muted-foreground)] backdrop-blur-xs"
+                      : "border-transparent text-[var(--muted-foreground)] hover:text-[var(--foreground)]",
                   )}
                 >
                   {item.label}
@@ -143,16 +188,29 @@ export function PortfolioNavbar() {
               exit={{ y: 12, opacity: 0 }}
               className="mx-auto flex max-w-md flex-col gap-3 rounded-[2rem] border border-[var(--border-strong)]/80 bg-[var(--surface)]/90 p-6 shadow-[var(--shadow-strong)]"
             >
-              {navigationItems.map((item) => (
-                <a
-                  key={item.href}
-                  href={item.href}
-                  onClick={() => setOpen(false)}
-                  className="rounded-2xl border border-transparent px-4 py-3 text-base font-medium text-[var(--foreground)] transition-colors hover:border-[var(--border-strong)] hover:bg-[var(--surface-strong)]"
-                >
-                  {item.label}
-                </a>
-              ))}
+              {navigationItems.map((item) => {
+                const itemId = item.href.replace("#", "");
+                const active = itemId === activeSection;
+
+                return (
+                  <a
+                    key={item.href}
+                    href={item.href}
+                    onClick={() => {
+                      setActiveSection(itemId);
+                      setOpen(false);
+                    }}
+                    className={cn(
+                      "rounded-2xl border px-4 py-3 text-base font-medium transition-colors",
+                      active
+                        ? "border-[var(--foreground)] bg-[var(--surface-strong)] text-[var(--foreground)]"
+                        : "border-transparent text-[var(--foreground)] hover:border-[var(--border-strong)] hover:bg-[var(--surface-strong)]",
+                    )}
+                  >
+                    {item.label}
+                  </a>
+                );
+              })}
             </motion.div>
           </motion.div>
         ) : null}

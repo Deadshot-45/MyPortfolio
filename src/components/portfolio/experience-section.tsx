@@ -25,7 +25,7 @@ export default function ExperienceSection() {
               <Reveal
                 key={`${experience.company}-${experience.role}`}
                 delay={index * 0.08}
-                className="relative rounded-[2rem] border border-[var(--border-strong)]/80 bg-[var(--surface)]/76 p-6 shadow-[var(--shadow-soft)] backdrop-blur"
+                className="relative rounded-4xl border border-[var(--border-strong)]/80 bg-[var(--surface)]/76 p-6 shadow-[var(--shadow-soft)] backdrop-blur"
               >
                 <div className="absolute left-[-1.52rem] top-8 h-4 w-4 rounded-full border-4 border-[var(--background)] bg-[var(--accent)] shadow-[0_0_24px_rgba(83,126,255,0.45)] sm:left-[-1.78rem]" />
                 <div className="flex flex-col gap-4 lg:flex-row lg:items-start lg:justify-between">
